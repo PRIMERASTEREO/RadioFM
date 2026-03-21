@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PRIMERA STEREO | RADIO ONLINE</title>
+    
+    <link rel="stylesheet" href="./css/style.css?v=1.8">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        window.radioConfig = {
+            stationSlug: "primerastereo", 
+            streamUrl: "https://primerastereo.stream.laut.fm/primerastereo",
+            // Agregamos las redes aquí para que el script las dibuje con color
+            socialLinks: [
+                { platform: 'instagram', url: 'https://instagram.com/Primera.Stereo/' },
+                { platform: 'facebook', url: 'https://facebook.com/PrimeraStereoRadio' },
+                { platform: 'twitter', url: 'https://www.twitter.com/Primera_Stereo' },
+                { platform: 'whatsapp', url: 'https://api.whatsapp.com/send?phone=+5804127097429&text=Hola me comunico desde tu página web' },
+                { platform: 'telegram', url: 'https://t.me/PrimeraStereo' },
+                { platform: 'tiktok', url: 'https://tiktok.com/@primerastereo' },
+                { platform: 'soundcloud', url: 'https://soundcloud.com/primerastereo' },
+                { platform: 'youtube', url: 'https://www.youtube.com/@primerastereo' }
+				
+            ]
+        };
+    </script>
+</head>
+
+<body>
+    <div class="bg-layer"></div>
+    <div class="bg-overlay"></div>
+
+    <div class="side-menu-overlay" id="menu-overlay"></div>
+    
+    <aside class="side-menu" id="side-menu">
+        <div class="menu-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0px;">
+            <center><h3 style="color: white; margin: 0;">Síguenos</h3></center>
+            <button class="icon-btn" id="close-menu-btn" style="font-size: 30px; color: white;">&times;</button>
+        </div>
+        
+        <div id="menu-social-icons"></div>
+
+        
+    <a href="https://www.appcreator24.com/app3819260-6rbmq8" target="_blank" class="social-btn-menu">
+    <i class="fab fa-google-play" style="color: #34A853 !important; font-size: 22px !important; width: 30px; margin-right: 15px; text-align: center; display: inline-block !important; transition: none !important; transform: none !important;"></i>
+    <span style="color: #ffffff !important; font-size: 1rem !important; text-transform: capitalize !important; font-weight: 500;">Descargar App</span>
+</a>
+</div>
+    </aside>
+
+    <header>
+        <button class="icon-btn" id="menu-btn"><i class="fas fa-bars"></i></button>
+    </header>
+
+    <main>
+        <div class="brand-container" style="text-align: center; margin-bottom: 15px;">
+            <h2 style="color: #FFFF00; font-family: 'Outfit', sans-serif; font-size: 2.2rem; letter-spacing: 2px; text-transform: uppercase; margin: 0;">
+                PRIMERA STEREO
+            </h2>
+            <span style="color: #ffffff; font-size: 1.5rem; letter-spacing: 4px; text-transform: uppercase;">
+                Radio Online
+            </span>
+        </div>
+
+        <div class="visualizer-container">
+            <img src="https://primerastereo.netlify.app/favicon.png" alt="Portada" class="album-art" id="album-art">
+            <div class="glow-ring"></div>
+        </div>
+
+        <div class="track-info">
+            <h1 id="station-name" style="color: white; font-size: 1.4rem; margin-top: 9px;">PRIMERA STEREO</h1>
+            <p id="song-title" style="color: white;">Cargando...</p>
+        </div>
+    </main>
+
+    <footer>
+        <button id="play-pause-btn" class="play-btn">
+             <i class="fas fa-play" id="play-icon"></i>
+             <i class="fas fa-pause" id="pause-icon" style="display:none;"></i>
+        </button>
+
+        <div class="volume-wrapper" style="display: flex; align-items: center; gap: 12px; width: 80%; max-width: 300px; margin-top: 15px;">
+            <i class="fas fa-volume-down" style="color: white; opacity: 0.6;"></i>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.8" style="flex-grow: 1; accent-color: #4a63e6;">
+            <i class="fas fa-volume-up" style="color: white; opacity: 0.6;"></i>
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <p style="color: white; font-size: 12px;">
+                © Copyright 2010 - 2026
+                <span style="color: #FFFF00; font-weight: 600;">PRIMERA STEREO Radio Online</span>
+            </p>
+        </div>
+    </footer>
+
+    <audio id="audio-player"></audio>
+    <script src="./js/script.js?v=1.8"></script>
+		<script>
+  // 1. Evitar el men煤 del botón derecho (segundo botón)
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // 2. Inhabilitar Ctrl+U (y Ctrl+Shift+I / F12 para mayor seguridad)
+  document.addEventListener('keydown', function(event) {
+    if (
+      (event.ctrlKey && event.key === 'u') || // Ctrl+U
+      (event.ctrlKey && event.shiftKey && event.key === 'I') || // Ctrl+Shift+I
+      event.key === 'F12' // F12
+    ) {
+      event.preventDefault();
+      return false;
+    }
+  });
+</script>
+<script>
+    // Inhabilitar clic derecho
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    // Inhabilitar Ctrl+U y Ctrl+I
+    document.addEventListener('keydown', e => {
+        if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 'i' || e.key === 'I')) {
+            e.preventDefault();
+            return false;
+        }
+    });
+</script>
+</body>
+</html>
