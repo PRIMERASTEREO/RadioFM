@@ -73,9 +73,9 @@
             if (itunesData.results.length > 0) {
                 albumArt.src = itunesData.results[0].artworkUrl100.replace('100x100bb', '600x600bb');
             } else {
-                albumArt.src = "https://primerastereo.netlify.app/favicon.png";
+                albumArt.src = "https://primerastereofm.netlify.app//images/PSRO5-8.png";
             }
-        } catch (error) { albumArt.src = "https://primerastereo.netlify.app/favicon.png"; }
+        } catch (error) { albumArt.src = "https://primerastereofm.netlify.app//images/PSRO5-8.png"; }
     }
 
     function loadSocials() {
